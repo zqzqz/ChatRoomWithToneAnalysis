@@ -141,6 +141,12 @@ function Socket(srv) {
             else {
 
                 msg = msg.slice(0, 140);
+                
+                var Tone = require("./tone");
+                tone = new Tone();
+                tone.initial();
+                obj = tone.analysis(msg);
+
 
                 // save msg to db
                 var history = new Message({
