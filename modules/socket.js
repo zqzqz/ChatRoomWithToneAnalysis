@@ -154,8 +154,10 @@ function Socket(srv) {
                 
                 console.log("start");
                 
+
+
                 tone.analysis(msg).then(function (data) {
-                    console.log(data);
+                    //console.log(data);
                     // save msg to db
                     var history = new Message({
                         sid: sid,
@@ -168,14 +170,37 @@ function Socket(srv) {
                     history.save();
                     const anger = 0;
                     const disgust = 1;
-                    const fear = 3;
-                    const sadness = 5;
+                    const fear = 2;
+                    const sadness = 4;
 
                     // emit the msg to all clients
-                    if (data["document_tone"]["tone_categories"][0]["tones"][0]["score"])
-                    io.to(room).emit('chat', { cid: cid, name: cname, msg: msg, t: '' });
-                    
-                    return data;
+                    if (data["document_tone"]["tone_categories"][0]["tones"][anger]["score"] < 0.3
+                        && data["document_tone"]["tone_categories"][0]["tones"][disgust]["score"] < 0.3
+                        && data["document_tone"]["tone_categories"][0]["tones"][fear]["score"] < 0.3
+                        && data["document_tone"]["tone_categories"][0]["tones"][sadness]["score"] < 0.3) {
+                        io.to(room).emit('chat', { cid: cid, name: cname, msg: msg, t: '' });
+                    } else {
+                        var warn_msg = "";
+                        var suggest_msg = "suggest message";
+                        console.log(JSON.stringify(data));
+                        if (data["document_tone"]["tone_categories"][0]["tones"][anger]["score"] >= 0.3) {
+                            warn_msg = warn_msg + "Your msg shows too much anger.\n";
+                        }
+                        if (data["document_tone"]["tone_categories"][0]["tones"][disgust]["score"] >= 0.3) {
+                            warn_msg = warn_msg + "Your msg shows too much disgust.\n";
+                        }
+                        if (data["document_tone"]["tone_categories"][0]["tones"][fear]["score"] >= 0.3) {
+                            warn_msg = warn_msg + "Your msg shows too much fear.\n";
+                        }
+                        if (data["document_tone"]["tone_categories"][0]["tones"][sadness]["score"] >= 0.3) {
+                            warn_msg = warn_msg + "Your msg shows too much sadness.\n";
+                        }
+                        console.log(warn_msg);
+                        //io.to(room).emit('chat', { cid: cid, name: cname, msg: warn_msg, t: '' });
+                        //io.to(room).emit('chat', { name: warn_msg, t: 'syswarn' });
+                        io.to(room).emit('chat', { name: warn_mag, t: 'syswarn' });
+                    }
+                    resolove(warn_msg, suggest_msg);
                 });
             }
 

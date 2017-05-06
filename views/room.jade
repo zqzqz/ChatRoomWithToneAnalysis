@@ -1,4 +1,4 @@
-//
+﻿//
    Created by hevlhayt@foxmail.com 
    on 2016/8/24.
 
@@ -11,7 +11,7 @@ block content
         .col-md-6.col-md-offset-3.text-center
             .box-message-inner
               textarea(v-model='message', @keydown.enter.prevent='send', v-on:input='at')
-              button(@click="send")= 'POST!'
+              button(@click="send")= 'POST!' 
 
   .container.box-chat
     .row
@@ -19,15 +19,15 @@ block content
         template(v-for='item in items')
           template(v-if=" item.t.indexOf('sys') != -1 ")
             template(v-if=" item.t === 'sysin' ")
-              .msg-system= '►► {{ item.name }} さんが入室しました'
+              .msg-system= '►► {{ item.name }} has entered the chat room.'
             template(v-else)
               template(v-if=" item.t === 'sysout' ")
-                .msg-system= '►► {{ item.name }} さんが退室しました'
+                .msg-system= '►► {{ item.name }} has exited the chat room.'
               template(v-else)
                 template(v-if=" item.t === 'syswarn' ")
-                  .msg-system= '►► {{ item.name }} 被管理桑警告'
+                  .msg-system= '►► {{ item.name }}'
                 template(v-else)
-                  .msg-system= '►► 欢迎来到崩坏的次元裂缝，查看更多请点右下小绿(≧∇≦)/'
+                  .msg-system= '►► Welcome to the Chat Room(≧∇≦)/'
           template(v-else)
             .msg-default
               .msg-user.text-center(@click='at(item.cid)')
