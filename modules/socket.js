@@ -12,7 +12,16 @@ var cookie = require('cookie');
 var logger = require('./logger');
 var util = require('./util');
 var characters = require('./characters.js');
+var fs = require('fs');
+var readline = require("./fs.js")
+var source = "c:\\Users\\dell\\Desktop\\a.txt";
+var target = "c:\\Users\\dell\\Desktop\\a.txt"
+var r = readline.fopen(source, "r");
+var w = fs.openSync(target, "w")
 
+var Tone = require("./tone");
+var tone = new Tone();
+global.tmp=1;
 module.exports = Socket;
 
 
@@ -142,26 +151,34 @@ function Socket(srv) {
 
                 msg = msg.slice(0, 140);
                 
-                var Tone = require("./tone");
-                tone = new Tone();
-                tone.initial();
-                obj = tone.analysis(msg);
+                
+                console.log("start");
+                
+                tone.analysis(msg).then(function (data) {
+                    console.log(data);
+                    // save msg to db
+                    var history = new Message({
+                        sid: sid,
+                        cid: cid,
+                        ipaddr: ipaddr,
+                        room: room,
+                        msg: msg,
+                        timestamp: Date.now()
+                    });
+                    history.save();
+                    const anger = 0;
+                    const disgust = 1;
+                    const fear = 3;
+                    const sadness = 5;
 
-
-                // save msg to db
-                var history = new Message({
-                    sid: sid,
-                    cid: cid,
-                    ipaddr: ipaddr,
-                    room: room,
-                    msg: msg,
-                    timestamp: Date.now()
+                    // emit the msg to all clients
+                    if (data["document_tone"]["tone_categories"][0]["tones"][0]["score"])
+                    io.to(room).emit('chat', { cid: cid, name: cname, msg: msg, t: '' });
+                    
+                    return data;
                 });
-                history.save();
             }
 
-            // emit the msg to all clients
-            io.to(room).emit('chat', { cid: cid, name: cname, msg: msg, t: ''});
         });
 
 
