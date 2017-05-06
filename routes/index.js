@@ -7,7 +7,7 @@ var schedule = require('../modules/schedule.js');
 var util = require('../modules/util');
 
 
-var title = 'Chat2x | 次元聊天室';
+var title = 'ChatRoom 聊天室';
 
 var start = moment('17-30', 'H-m'),
     end = moment('23-35', 'H-m'),
