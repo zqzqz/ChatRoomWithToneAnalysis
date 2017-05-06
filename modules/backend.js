@@ -23,7 +23,7 @@ var sessionMiddleware = session({
     secret: 'bdvstUP53hS110xN7DW8FE4NS2NdAw7X',
     store: new MongoStore({ mongooseConnection: db }),
     cookie: {
-        maxAge: 2 * 60 * 1000
+        maxAge: 2 * 60 * 999999
     },
     resave: false,
     saveUninitialized: true,

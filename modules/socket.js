@@ -116,6 +116,7 @@ function Socket(srv) {
 
         var cname = characters[cid]['name'];
         socket.emit('name', cname);
+        socket.join(cname);
 
         // forbid multiple sysin msg
         if (!(sid in online)) {
@@ -199,11 +200,10 @@ function Socket(srv) {
                         //$(".msg-system").before('<div class="msg-system">warn_msg</div>');
                         //io.to(room).emit('chat', { cid: cid, name: cname, msg: warn_msg, t: '' });
                         //io.to(room).emit('chat', { name: warn_msg, t: 'syswarn' });
-
+                        io.to(cname).emit('chat', { name: warn_msg, t: 'syswarn' });
                         // this is the baseline broadcast version
-                        io.to(room).emit('chat', { name: warn_mag, t: 'syswarn' });
+                        //io.to(room).emit('chat', { name: warn_mag, t: 'syswarn' });
                     }
-                    resolove(warn_msg, suggest_msg);
                 });
             }
 
