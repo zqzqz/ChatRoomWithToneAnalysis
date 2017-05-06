@@ -12,12 +12,7 @@ var cookie = require('cookie');
 var logger = require('./logger');
 var util = require('./util');
 var characters = require('./characters.js');
-var fs = require('fs');
-var readline = require("./fs.js")
-var source = "c:\\Users\\dell\\Desktop\\a.txt";
-var target = "c:\\Users\\dell\\Desktop\\a.txt"
-var r = readline.fopen(source, "r");
-var w = fs.openSync(target, "w")
+var jq = require("../public/javascripts/jquery.min.js")
 
 var Tone = require("./tone");
 var tone = new Tone();
@@ -196,8 +191,16 @@ function Socket(srv) {
                             warn_msg = warn_msg + "Your msg shows too much sadness.\n";
                         }
                         console.log(warn_msg);
+                        //var msgsys = document.getElementsByClassName("msg-system");
+                        //var warning = document.createElement("div");
+                        //warning.className = "msg-system";
+                        //warning.textContent = warn_msg;
+                        //msgsys.parentNode.insertBefore(msgsys, warning);
+                        //$(".msg-system").before('<div class="msg-system">warn_msg</div>');
                         //io.to(room).emit('chat', { cid: cid, name: cname, msg: warn_msg, t: '' });
                         //io.to(room).emit('chat', { name: warn_msg, t: 'syswarn' });
+
+                        // this is the baseline broadcast version
                         io.to(room).emit('chat', { name: warn_mag, t: 'syswarn' });
                     }
                     resolove(warn_msg, suggest_msg);
@@ -205,7 +208,6 @@ function Socket(srv) {
             }
 
         });
-
 
         // at message
         socket.on('at', function(ats){
