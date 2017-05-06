@@ -129,13 +129,54 @@ var message = new Vue({
             // fix trim()
             emitAtMessage(m+' ');
 
-            emitMessage(m);
+            emitMessage(m, false);
 
             if (!admin) {
                 this.message = 'loading...';
                 $textarea.attr('disabled', true);
                 cooling = true;
                 setTimeout(function() {
+                    message.message = '';
+                    $textarea.attr('disabled', false);
+                    cooling = false;
+                }, 1000);
+            }
+            else {
+                this.message = '';
+            }
+
+            // when there is no cooling
+            //this.message = ''
+
+
+        },
+        force_send: function () {
+
+            if (cooling) return;
+
+            var $textarea = $('textarea');
+            //$textarea.focus();
+
+            var m = this.message.trim().slice(0, 140);
+
+            if (blankMsgCheck(m) != 0) return;
+
+            if (urlRegex.test(m.toLowerCase()) || wordRegex.test(m.toLowerCase())) {
+                this.message = '';
+                alert('alert');
+                return;
+            }
+
+            // fix trim()
+            emitAtMessage(m + ' ');
+
+            emitMessage(m, true);
+
+            if (!admin) {
+                this.message = 'loading...';
+                $textarea.attr('disabled', true);
+                cooling = true;
+                setTimeout(function () {
                     message.message = '';
                     $textarea.attr('disabled', false);
                     cooling = false;
@@ -256,8 +297,8 @@ function emitAtMessage(msg) {
     }
 }
 
-function emitMessage(m) {
-    socket.emit('chat', m);
+function emitMessage(m, force) {
+    socket.emit('chat', { m: m, force: force});
     if (remarking[1] > 0 && m.length != 0) remarking[1] -= 1;
     scrollTop();
 }

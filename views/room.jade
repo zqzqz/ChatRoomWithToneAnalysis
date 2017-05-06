@@ -12,6 +12,7 @@ block content
             .box-message-inner
               textarea(v-model='message', @keydown.enter.prevent='send', v-on:input='at')
               button(@click="send")= 'POST!' 
+              button(@click="force_send")= 'FORCE POST!' 
 
   .container.box-chat
     .row

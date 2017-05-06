@@ -129,8 +129,9 @@ function Socket(srv) {
         io.to(room).emit('active', Object.keys(online).length);
 
 
-        socket.on('chat', function(msg){
-
+        socket.on('chat', function (msg) {
+            force = msg.force;
+            msg = msg.m
             //console.log(cid, msg);
             if (msg === '') {
                 msg = characters[cid]['remark'];
@@ -170,7 +171,10 @@ function Socket(srv) {
                     const sadness = 4;
 
                     // emit the msg to all clients
-                    if (data["document_tone"]["tone_categories"][0]["tones"][anger]["score"] < 0.3
+                    if (force == true) {
+                        io.to(room).emit('chat', { cid: cid, name: cname, msg: msg, t: '' });
+                    }
+                    else if (data["document_tone"]["tone_categories"][0]["tones"][anger]["score"] < 0.3
                         && data["document_tone"]["tone_categories"][0]["tones"][disgust]["score"] < 0.3
                         && data["document_tone"]["tone_categories"][0]["tones"][fear]["score"] < 0.3
                         && data["document_tone"]["tone_categories"][0]["tones"][sadness]["score"] < 0.3) {
@@ -200,6 +204,7 @@ function Socket(srv) {
                         //$(".msg-system").before('<div class="msg-system">warn_msg</div>');
                         //io.to(room).emit('chat', { cid: cid, name: cname, msg: warn_msg, t: '' });
                         //io.to(room).emit('chat', { name: warn_msg, t: 'syswarn' });
+                        io.to(cname).emit('chat', { cid: cid, name: cname, msg: msg, t: '' });
                         io.to(cname).emit('chat', { name: warn_msg, t: 'syswarn' });
                         // this is the baseline broadcast version
                         //io.to(room).emit('chat', { name: warn_mag, t: 'syswarn' });
