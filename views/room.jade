@@ -1,0 +1,59 @@
+//
+   Created by hevlhayt@foxmail.com 
+   on 2016/8/24.
+
+extends basic
+
+block content
+  nav.navbar.navbar-default.navbar-fixed-top
+    .container
+      .row.box-message
+        .col-md-6.col-md-offset-3.text-center
+            .box-message-inner
+              textarea(v-model='message', @keydown.enter.prevent='send', v-on:input='at')
+              button(@click="send")= 'POST!'
+
+  .container.box-chat
+    .row
+      .col-md-8.col-md-offset-2.box-talks
+        template(v-for='item in items')
+          template(v-if=" item.t.indexOf('sys') != -1 ")
+            template(v-if=" item.t === 'sysin' ")
+              .msg-system= '►► {{ item.name }} さんが入室しました'
+            template(v-else)
+              template(v-if=" item.t === 'sysout' ")
+                .msg-system= '►► {{ item.name }} さんが退室しました'
+              template(v-else)
+                template(v-if=" item.t === 'syswarn' ")
+                  .msg-system= '►► {{ item.name }} 被管理桑警告'
+                template(v-else)
+                  .msg-system= '►► 欢迎来到崩坏的次元裂缝，查看更多请点右下小绿(≧∇≦)/'
+          template(v-else)
+            .msg-default
+              .msg-user.text-center(@click='at(item.cid)')
+                .img-avatar(v-bind:class="{ 'at': atActive }", \
+                  v-bind:style="{ background: item.avatar, backgroundSize: '58px 58px' }")
+                = '{{ item.name }}'
+              .msg-bubble.bounce(v-bind:style="{ \
+                  background: item.background, color: item.color \
+                }")= '{{ item.msg }}'
+  a#back-to-top
+    i.fa.fa-info
+
+block script
+  script(src='/javascripts/jquery.min.js')
+  script(src='/javascripts/bootstrap.min.js')
+  script(src='/javascripts/vue.min.js')
+  script(src='/javascripts/socket.io-1.4.5.js')
+  script(src='/javascripts/jquery.avgrund.js')
+  if admin
+    script(type='text/javascript').
+      var admin= true;
+  else
+    script(type='text/javascript').
+      var admin = false;
+  script(src='/javascripts/chat2x.js')
+  script(src='/javascripts/analytics.js')
+
+
+

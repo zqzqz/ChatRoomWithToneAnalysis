@@ -1,0 +1,502 @@
+{
+  "admin": {
+    "name": "管理桑",
+    "remark": "新人右下小绿是可以点的呦"
+  },
+  "a": {
+    "name": "友人A",
+    "remark": "我是基佬"
+  },
+  "shinji": {
+    "name": "碇真嗣",
+    "remark": "只要微笑就可以了"
+  },
+  "rei": {
+    "name": "绫波丽",
+    "remark": "我要让碇君即使不用驾驶EVA，也能活下去"
+  },
+  "asuka": {
+    "name": "明日香",
+    "remark": "あんたバカ？"
+  },
+  "nagisa": {
+    "name": "渚薰",
+    "remark": "正是为了与你相遇，我才降生到这个世界"
+  },
+  "yui": {
+    "name": "唯",
+    "remark": "哈-----梓喵~~"
+  },
+  "mio": {
+    "name": "秋山澪",
+    "remark": "我嫁不出去了……"
+  },
+  "azusa": {
+    "name": "梓喵",
+    "remark": "前辈！！！"
+  },
+  "lelouch": {
+    "name": "ZERO",
+    "remark": "如果你是魔女，我只要化身魔王就可以了"
+  },
+  "cc": {
+    "name": "C.C.",
+    "remark": "鲁路修，你知道雪为什么是白色的吗？因为忘记了自己曾经的颜色"
+  },
+  "okabe": {
+    "name": "凤凰院凶真",
+    "remark": "el psy congroo"
+  },
+  "kurisu": {
+    "name": "助手",
+    "remark": "HENTAI ！"
+  },
+  "mayuri": {
+    "name": "真由喜",
+    "remark": "嘟嘟噜~~"
+  },
+  "honoka": {
+    "name": "高坂穗乃果",
+    "remark": "总有一天，我会让这里座无虚席",
+    "color": [239, 162, 0]
+  },
+  "kotori": {
+    "name": "南小鸟",
+    "remark": "把你们全部都变成小鸟的点心"
+  },
+  "nico": {
+    "name": "矢泽妮可",
+    "remark": "NicoNicoNi~ o(〃'▽'〃) V",
+    "color": [255, 192, 203]
+  },
+  "l": {
+    "name": "L",
+    "remark": "Kira，我是L"
+  },
+  "light": {
+    "name": "夜神月",
+    "remark": "我就是新世界の神"
+  },
+  "miku": {
+    "name": "初音未来",
+    "remark": "我是世界第一的公主殿下 ♪♪♪",
+    "color": [0, 167, 178]
+  },
+  "tianyi": {
+    "name": "洛天依",
+    "remark": "包子真好吃，吧唧吧唧",
+    "color": [102, 204, 255]
+  },
+  "aling": {
+    "name": "乐正绫",
+    "remark": "阿绫教你飙高音o(〃'▽'〃)o",
+    "color": [238, 0, 0]
+  },
+  "luffy": {
+    "name": "路飞",
+    "remark": "我是要成为海贼王的男人 ！！！"
+  },
+  "chopper": {
+    "name": "乔巴",
+    "remark": "混蛋，就算你这么说我一点也不高兴啦，你个混蛋"
+  },
+  "hancock": {
+    "name": "汉库克",
+    "remark": "无论妾身做了什么，都会被原谅，因为妾身，实在太美了"
+  },
+  "edward": {
+    "name": "爱德华",
+    "remark": "你说谁是豆丁啊？！！！&%$##"
+  },
+  "touma": {
+    "name": "上条当麻",
+    "remark": "不幸だ!"
+  },
+  "misaka": {
+    "name": "御坂美琴",
+    "remark": "不要喊我哔哩哔哩(╬▔皿▔)"
+  },
+  "index": {
+    "name": "Index",
+    "remark": "当嘛，我肚子饿了o(≧口≦)o"
+  },
+  "accelerator": {
+    "name": "一方通行",
+    "remark": "切，我才不喜欢什么LOLI"
+  },
+  "subaru": {
+    "name": "菜月昴",
+    "remark": "帕特拉修，其实..."
+  },
+  "rem": {
+    "name": "蕾姆",
+    "remark": "真的，昴是个很过分的人呢",
+    "color": [0, 220, 70]
+  },
+  "emt": {
+    "name": "莉雅",
+    "remark": "和管理桑新婚旅游中~~幸福.JPG",
+    "color": [136, 102, 172]
+  },
+  "petelgeuse": {
+    "name": "培提尔其乌斯",
+    "remark": "你，真是怠慢呢"
+  },
+  "hakase": {
+    "name": "博士",
+    "remark": "SA ME! SA ME!"
+  },
+  "sakamoto": {
+    "name": "坂本先生",
+    "remark": "要叫我先生。哎这个好好玩啊"
+  },
+  "shirou": {
+    "name": "士郎",
+    "remark": "Trace on"
+  },
+  "saber": {
+    "name": "Saber",
+    "remark": "你是我的master吗"
+  },
+  "lin": {
+    "name": "远坂凛",
+    "remark": "Archer，到我房间来"
+  },
+  "gilgamesh": {
+    "name": "英雄王",
+    "remark": "杂修"
+  },
+  "tokiomi": {
+    "name": "远坂时臣",
+    "remark": "这个锅我不背"
+  },
+  "shiki": {
+    "name": "两仪式",
+    "remark": "就算是神也杀给你看"
+  },
+  "kaori": {
+    "name": "宫园薰",
+    "remark": "我任命友人A做我的伴奏者"
+  },
+  "kousei": {
+    "name": "有马公生",
+    "remark": "春天马上就要来了，让我和你相遇的春天，就要来了，再也没有你的春天，就要来了♪",
+    "color": [43, 43, 43]
+  },
+  "eru": {
+    "name": "千反田",
+    "remark": "☆ 我很好奇 ☆"
+  },
+  "houtarou": {
+    "name": "奉太郎",
+    "remark": "我也差不多开始厌倦灰色了"
+  },
+  "konata": {
+    "name": "泉此方",
+    "remark": "贫乳是稀有价值"
+  },
+  "shana": {
+    "name": "夏娜",
+    "remark": "无路赛，无路赛，无路赛 (┙>∧<)┙へ┻┻"
+  },
+  "makoto": {
+    "name": "大家的诚",
+    "remark": "下面的我都上过"
+  },
+  "gintoki": {
+    "name": "坂田银时",
+    "remark": "天然卷的家伙都是好人"
+  },
+  "elizabeth": {
+    "name": "伊丽莎白",
+    "remark": "（举牌）"
+  },
+  "asuna": {
+    "name": "亚丝娜",
+    "remark": "初次见面，我是结城明日奈，多次获得劳动模范称号"
+  },
+  "kirito": {
+    "name": "桐子",
+    "remark": "听说我老婆本子特别多？"
+  },
+  "madoka": {
+    "name": "鹿目圆",
+    "remark": "我……根本就不需要绝望"
+  },
+  "homura": {
+    "name": "晓美焰",
+    "remark": "没有人会相信未来，没有人会接受未来。我不再依靠任何人了，也不需要让任何人去理解了",
+    "color": [48, 48, 48]
+  },
+  "mami": {
+    "name": "学姐",
+    "remark": "咦，好像缺了点什么",
+    "color": [247, 218, 139]
+  },
+  "qb": {
+    "name": "QB",
+    "remark": "和我签订契约，成为魔法少女吧"
+  },
+  "kanade": {
+    "name": "立华奏",
+    "remark": "请给我来一盆麻婆豆腐，特辣那种"
+  },
+  "kyousuke": {
+    "name": "高坂京介",
+    "remark": "俺妹不可爱"
+  },
+  "kirino": {
+    "name": "小桐桐",
+    "remark": "死妹控 恶心"
+  },
+  "ruri": {
+    "name": "黑猫",
+    "remark": "咒杀你哦"
+  },
+  "korosensei": {
+    "name": "杀老师",
+    "remark": "五路哎嘿嘿嘿嘿嘿嘿"
+  },
+  "nagisak": {
+    "name": "潮田渚",
+    "remark": "我们是杀手，目标是，老师",
+    "color": [155, 198, 247]
+  },
+  "karma": {
+    "name": "赤羽業",
+    "remark": "呦，渚，今天你好可爱啊"
+  },
+  "mirai": {
+    "name": "栗山未来",
+    "remark": "不愉快です"
+  },
+  "souma": {
+    "name": "药王",
+    "remark": "招待不周（¯﹃¯）"
+  },
+  "sora": {
+    "name": "春日野穹",
+    "remark": "欧尼酱，不要啊 (*/ω＼*)"
+  },
+  "sakamotobi": {
+    "name": "在下坂本",
+    "remark": "在下坂本，有何贵干"
+  },
+  "jotaro": {
+    "name": "承太郎",
+    "remark": "欧拉欧拉欧拉欧拉欧拉欧拉欧拉欧拉(╬ﾟдﾟ)"
+  },
+  "dio": {
+    "name": "迪奥",
+    "remark": "木大木大木大木大木大木大木大木大(ﾟДﾟ)w"
+  },
+  "haruhi": {
+    "name": "SOS团长",
+    "remark": "我对普通的人类没有兴趣。你们之中要是有外星人、未来人、异世界来的人、超能力者，就尽管来找我吧！以上"
+  },
+  "kyon": {
+    "name": "阿虚",
+    "remark": "诸君，我喜欢单马尾"
+  },
+  "yuki": {
+    "name": "长门有希",
+    "remark": "",
+    "color": [128, 98, 117]
+  },
+  "yukari": {
+    "name": "八云紫",
+    "remark": "我是八云紫，今年17岁"
+  },
+  "marisa": {
+    "name": "魔理沙",
+    "remark": "弹幕最重要的是火力da☆ze！"
+  },
+  "remilia": {
+    "name": "大小姐",
+    "remark": "给我来一杯85年的红茶"
+  },
+  "shu": {
+    "name": "集",
+    "remark": "我的王之力啊♂"
+  },
+  "inory": {
+    "name": "祈",
+    "remark": "请使用我",
+    "color": [195, 70, 24]
+  },
+  "hideyoshi": {
+    "name": "秀吉",
+    "remark": "老朽的性别是男"
+  },
+  "orihara": {
+    "name": "甘楽",
+    "remark": "人类LOVE！我最喜欢人类了！我爱你们！",
+    "color": [230, 167, 38]
+  },
+  "levi": {
+    "name": "利威尔",
+    "remark": "喂，小鬼们，现在是什么情况啊"
+  },
+  "naruto": {
+    "name": "漩涡鸣人",
+    "remark": "忍术·大色诱之术"
+  },
+  "sasuke": {
+    "name": "宇智波佐助",
+    "remark": "呦，吊车尾（关爱智障的眼神）"
+  },
+  "sakuran": {
+    "name": "春野樱",
+    "remark": "打爆你哦"
+  },
+  "kakashi": {
+    "name": "卡卡西",
+    "remark": "我在人生的道路上迷失了...",
+    "color": [130, 144, 91]
+  },
+  "naruhodo": {
+    "name": "成步堂龙一",
+    "remark": "异议あり!!!",
+    "color": [63, 67, 138]
+  },
+  "konan": {
+    "name": "江户川柯南",
+    "remark": "真相只有一个，凶手就是楼下这个光头！"
+  },
+  "ran": {
+    "name": "毛利兰",
+    "remark": "因为我相信，红线连着我和新一呢"
+  },
+  "ai": {
+    "name": "灰原哀",
+    "remark": "工藤，我喜欢你"
+  },
+  "sakura": {
+    "name": "小樱",
+    "remark": "隐藏着黑暗力量的钥匙啊！请在我面前显示你真正的力量，与你定下约定的小樱命令你，封印解除！",
+    "color": [242, 137, 152]
+  },
+  "kira": {
+    "name": "基拉大和",
+    "remark": "基拉大和、Freedom，出撃"
+  },
+  "athrun": {
+    "name": "阿斯兰",
+    "remark": "基拉？！！！！！！！"
+  },
+  "lacus": {
+    "name": "拉克丝",
+    "remark": "♬♪♬♪♬♪♪♪（聊天室全员被洗脑中...）"
+  },
+  "cagalli": {
+    "name": "卡嘉莉",
+    "remark": "美玲，放开我家阿斯兰￣へ￣"
+  },
+  "mwu": {
+    "name": "穆",
+    "remark": "我果然是化不可能为可能的男人",
+    "color": [190, 163, 57]
+  },
+  "setsuna": {
+    "name": "刹那",
+    "remark": "我是GUNDAM",
+    "color": [50, 66, 143]
+  },
+  "lockon": {
+    "name": "洛克昂",
+    "remark": "洛克昂·史特拉托斯，瞄准狙击！",
+    "color": [69, 103, 72]
+  },
+  "pikachu": {
+    "name": "皮卡丘",
+    "remark": "● PIKA PIKA ●"
+  },
+  "amuro": {
+    "name": "阿姆罗",
+    "remark": "你居然打我！连我爸爸都没打过我！"
+  },
+  "char": {
+    "name": "夏亚",
+    "remark": "必杀！红色有角三倍速",
+    "color": [169, 56, 62]
+  },
+  "ushio": {
+    "name": "汐",
+    "remark": "早苗说了，可以哭的地方只有厕所…还有就是…爸爸的怀里…"
+  },
+  "natsume": {
+    "name": "夏目",
+    "remark": "我想保护平常的日常生活，与我一起度过那样生活的人们"
+  },
+  "nekosensei": {
+    "name": "猫老师",
+    "remark": "人类真是麻烦的生物"
+  },
+  "mashiro": {
+    "name": "椎名真白",
+    "remark": "呐,你想变成什么颜色?",
+    "color": [245, 245, 245]
+  },
+  "hiki": {
+    "name": "大老师",
+    "remark": "（敲黑板）记笔记了！"
+  },
+  "yukino": {
+    "name": "雪之下雪乃",
+    "remark": "将来某一天,你要来拯救我哦"
+  },
+  "yuigahama": {
+    "name": "由比滨结衣",
+    "remark": "把我的胸还给我 o(￣ヘ￣*)"
+  },
+  "iroha": {
+    "name": "一色彩羽",
+    "remark": "你要对我负责哦(●'◡'●)ﾉ♥ "
+  },
+  "renge": {
+    "name": "宫内莲华",
+    "remark": "喵帕斯 (=ﾟωﾟ)ﾉ ♪",
+    "color": [210, 198, 238]
+  },
+  "kurumi": {
+    "name": "时崎狂三",
+    "remark": "啊啦啊啦～"
+  },
+  "kuroko": {
+    "name": "黑子",
+    "remark": "我是影子，光越强，影子也就越强",
+    "color": [183, 214, 242]
+  },
+  "kagami": {
+    "name": "火神",
+    "remark": "赢不了，正好",
+    "color": [183, 30, 33]
+  },
+  "akashi": {
+    "name": "赤司征十郎",
+    "remark": "我从不知何为败北",
+    "color": [197, 38, 49]
+  },
+  "hinata": {
+    "name": "日向翔阳",
+    "remark": "挡在我面前的，是一面很高很高的墙",
+    "color": [223, 132, 69]
+  },
+  "kageyama": {
+    "name": "影山飞雄",
+    "remark": "Boke !!! (╬◣д◢)"
+  },
+  "oikawa": {
+    "name": "及川彻",
+    "remark": "认为自己没有才能的话，大概一辈子都不会有了",
+    "color": [65, 167, 172]
+  },
+  "yao": {
+    "name": "王耀",
+    "remark": "交给我吧阿鲁！"
+  },
+  "kiku": {
+    "name": "本田菊",
+    "remark": "请容在下考虑一下"
+  }
+}
