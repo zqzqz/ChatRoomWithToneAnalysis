@@ -27,7 +27,8 @@ forked and edited from chat2x
 
 ## How to use
 1. Install nodejs, npm and mongodb
-2. At root directory, `npm isntall`, then `node bin/www`
-3. Server set up at http://127.0.0.1:3000
+2. ^npm install waston-developer-cloud
+3. At root directory, `npm isntall`, then `node bin/www`
+4. Server set up at http://127.0.0.1:3000
 
 
