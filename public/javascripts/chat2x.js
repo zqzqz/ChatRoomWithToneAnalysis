@@ -134,7 +134,6 @@ var message = new Vue({
             emitAtMessage(m+' ');
 
             emitMessage(m, this.status);
-            console.log(this.status);
 
             if (!admin) {
                 this.message = 'loading...';

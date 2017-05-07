@@ -20,7 +20,7 @@ function Tone() {
                         reject(err);
                     }
                     else {
-                        resolve(tone);                       
+                        resolve({ "tone": tone, "message": m });
                         //return JSON.stringify(tone, null, 2);
                     }
                 });

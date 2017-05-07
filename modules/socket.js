@@ -3,6 +3,7 @@
  * Date: 2016/8/30
  * Time: 10:22
  */
+var exec = require('child_process').exec;
 var app = require('../app');
 var _ = require('underscore');
 var socket = require('socket.io');
@@ -167,34 +168,39 @@ function Socket(srv) {
                     });
                     history.save();
                     */
-                    const anger = 0;
-                    const disgust = 1;
-                    const fear = 2;
-                    const sadness = 4;
+                    var anger = data["tone"]["document_tone"]["tone_categories"][0]["tones"][0]["score"];
+                    var disgust = data["tone"]["document_tone"]["tone_categories"][0]["tones"][1]["score"];
+                    var fear = data["tone"]["document_tone"]["tone_categories"][0]["tones"][2]["score"];
+                    var sadness = data["tone"]["document_tone"]["tone_categories"][0]["tones"][4]["score"];
 
                     // emit the msg to all clients
                     if (force == true) {
                         io.to(room).emit('chat', { cid: cid, name: cname, msg: msg, t: '' });
                     }
-                    else if (data["document_tone"]["tone_categories"][0]["tones"][anger]["score"] < 0.5
-                        && data["document_tone"]["tone_categories"][0]["tones"][disgust]["score"] < 0.5
-                        && data["document_tone"]["tone_categories"][0]["tones"][fear]["score"] < 0.5
-                        && data["document_tone"]["tone_categories"][0]["tones"][sadness]["score"] < 0.5) {
+                    else if (anger < 0.5
+                        && disgust< 0.5
+                        && fear < 0.5
+                        && sadness < 0.5) {
                         io.to(room).emit('chat', { cid: cid, name: cname, msg: msg, t: '' });
                     } else {
+                        var max=0.5;
                         var warn_msg = "";
                         console.log(JSON.stringify(data));
-                        if (data["document_tone"]["tone_categories"][0]["tones"][anger]["score"] >= 0.5) {
+                        if (anger >= 0.5) {
                             warn_msg = warn_msg + "You are a little angry. calm dowm.\n";
+                            if (anger > max) max = anger;
                         }
-                        if (data["document_tone"]["tone_categories"][0]["tones"][disgust]["score"] >= 0.5) {
+                        if (disgust >= 0.5) {
                             warn_msg = warn_msg + "Your message shows too much disgust. Are you sure?\n";
+                            if (disgust > max) max = disgust;
                         }
-                        if (data["document_tone"]["tone_categories"][0]["tones"][fear]["score"] >= 0.5) {
+                        if (fear >= 0.5) {
                             warn_msg = warn_msg + "It seems you are afraid of something. Are you ok?\n";
+                            if (fear > max) max = fear;
                         }
-                        if (data["document_tone"]["tone_categories"][0]["tones"][sadness]["score"] >= 0.5) {
+                        if (sadness >= 0.5) {
                             warn_msg = warn_msg + "You seems kind of sad. Things will go better.\n";
+                            if (sadness > max) max = sadness;
                         }
                         
                         //var msgsys = document.getElementsByClassName("msg-system");
@@ -207,8 +213,20 @@ function Socket(srv) {
                         //io.to(room).emit('chat', { name: warn_msg, t: 'syswarn' });
                         io.to(cname).emit('chat', { cid: cid, name: cname, msg: 'not sent: '+msg, t: '' });
                         io.to(cname).emit('chat', { name: warn_msg, t: 'syswarn' });
+                        console.log(data["message"]);
                         // this is the baseline broadcast version
                         //io.to(room).emit('chat', { name: warn_mag, t: 'syswarn' });
+                        exec('python \"synonym substitution/__main__.py\" '+'\"'+data["message"]+'\"'+' '+max+' ', function (error, stdout, stderr) {
+                            if (stdout.length > 1) {
+                                io.to(cname).emit('chat', { cid: cid, name: cname, msg: "suggestion: " + stdout, t: '' });
+                            }
+                            else {
+                                console.log("no args");
+                            }
+                            if (error) {
+                                console.info(stderr);
+                            }
+                        });
                     }
                 });
             }
