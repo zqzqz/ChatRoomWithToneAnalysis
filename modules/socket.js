@@ -21,6 +21,7 @@ global.tmp=1;
 module.exports = Socket;
 
 
+
 function Socket(srv) {
 
     var io = socket(srv);
@@ -168,6 +169,7 @@ function Socket(srv) {
                     });
                     history.save();
                     */
+
                     var anger = data["tone"]["document_tone"]["tone_categories"][0]["tones"][0]["score"];
                     var disgust = data["tone"]["document_tone"]["tone_categories"][0]["tones"][1]["score"];
                     var fear = data["tone"]["document_tone"]["tone_categories"][0]["tones"][2]["score"];
@@ -187,19 +189,19 @@ function Socket(srv) {
                         var warn_msg = "";
                         console.log(JSON.stringify(data));
                         if (anger >= 0.5) {
-                            warn_msg = warn_msg + "You are a little angry. calm dowm.\n";
+                            warn_msg = warn_msg + "You are a little angry. calm dowm.\n      ";
                             if (anger > max) max = anger;
                         }
                         if (disgust >= 0.5) {
-                            warn_msg = warn_msg + "Your message shows too much disgust. Are you sure?\n";
+                            warn_msg = warn_msg + "Your message shows too much disgust. Are you sure?\n      ";
                             if (disgust > max) max = disgust;
                         }
                         if (fear >= 0.5) {
-                            warn_msg = warn_msg + "It seems you are afraid of something. Are you ok?\n";
+                            warn_msg = warn_msg + "It seems you are afraid of something. Are you ok?\n      ";
                             if (fear > max) max = fear;
                         }
                         if (sadness >= 0.5) {
-                            warn_msg = warn_msg + "You seems kind of sad. Things will go better.\n";
+                            warn_msg = warn_msg + "You seems kind of sad. Things will go better.\n      ";
                             if (sadness > max) max = sadness;
                         }
                         

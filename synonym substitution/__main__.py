@@ -4,12 +4,18 @@ from PyDictionary import PyDictionary
 import json
 from watson_developer_cloud import ToneAnalyzerV3
 import sys
-
+import re
 
 def main(data):
     s=data[1]
+
+    rep = {"fuck": "", "shit": "","bitch":"","asshole":""}
+    rep = dict((re.escape(k), v) for k, v in rep.iteritems())
+    pattern = re.compile("|".join(rep.keys()))
+    s = pattern.sub(lambda m: rep[re.escape(m.group(0))], s)
     p = pos(s)
     cur_score  = data[2]
+    
     for item in p:
         if item[1] == 'JJ' or item[1] == 'RB':
             syn = PyDictionary.synonym(item[0])

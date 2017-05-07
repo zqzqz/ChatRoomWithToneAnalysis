@@ -2,6 +2,7 @@
 
 var tone = require('watson-developer-cloud');
 const util = require('util')
+var wordRegex = /(shit|fuck|bitch|Éµ±Æ|ÄãÂè|Âè±Æ|²ÙÄã|Å¾|[0-9]{10,})/;
 
 function Tone() {
     var tone_dic = "default string";
@@ -12,6 +13,7 @@ function Tone() {
             version_date: '2016-05-19 '
         });
     this.analysis = function (m) {
+        m.replace(wordRegex, "*");
         var promise = new Promise(function (resolve, reject) {
             tone_analyzer.tone({ text: m },
                 function (err, tone) {

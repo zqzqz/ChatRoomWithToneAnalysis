@@ -10,7 +10,7 @@ block content
             .box-message-inner
               textarea(v-model='message', @keydown.enter.prevent='send', v-on:input='at')
               button(id='submit', @click="send")= 'POST' 
-              button(id='status', @click="changestatus", onclick="changestatus(this)", style="color:blue")='servive ON' 
+              button(id='status', @click="changestatus", onclick="changestatus(this)", style="color:blue")='service ON' 
 
   .container.box-chat
     .row
