@@ -29,7 +29,5 @@ function Tone() {
     }
 };
 
-
-
 module.exports = Tone;
 //////////////

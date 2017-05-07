@@ -183,18 +183,18 @@ function Socket(srv) {
                         var warn_msg = "";
                         console.log(JSON.stringify(data));
                         if (data["document_tone"]["tone_categories"][0]["tones"][anger]["score"] >= 0.5) {
-                            warn_msg = warn_msg + "Your message shows too much anger.\n";
+                            warn_msg = warn_msg + "You are a little angry. calm dowm.\n";
                         }
                         if (data["document_tone"]["tone_categories"][0]["tones"][disgust]["score"] >= 0.5) {
-                            warn_msg = warn_msg + "Your message shows too much disgust.\n";
+                            warn_msg = warn_msg + "Your message shows too much disgust. Are you sure?\n";
                         }
                         if (data["document_tone"]["tone_categories"][0]["tones"][fear]["score"] >= 0.5) {
-                            warn_msg = warn_msg + "Your message shows too much fear.\n";
+                            warn_msg = warn_msg + "It seems you are afraid of something. Are you ok?\n";
                         }
                         if (data["document_tone"]["tone_categories"][0]["tones"][sadness]["score"] >= 0.5) {
-                            warn_msg = warn_msg + "Your message shows too much sadness.\n";
+                            warn_msg = warn_msg + "You seems kind of sad. Things will go better.\n";
                         }
-                        console.log(warn_msg);
+                        
                         //var msgsys = document.getElementsByClassName("msg-system");
                         //var warning = document.createElement("div");
                         //warning.className = "msg-system";
