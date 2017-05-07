@@ -5,6 +5,7 @@ var logger = require('../modules/logger');
 var characters = require('../modules/characters.js');
 var schedule = require('../modules/schedule.js');
 var util = require('../modules/util');
+//var msg = require('../public/javascripts/chat2x.js')
 
 
 var title = 'ChatRoom 聊天室';
