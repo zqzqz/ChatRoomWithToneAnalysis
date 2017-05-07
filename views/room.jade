@@ -1,6 +1,4 @@
-﻿//
-   Created by hevlhayt@foxmail.com 
-   on 2016/8/24.
+﻿
 
 extends basic
 
@@ -11,8 +9,8 @@ block content
         .col-md-6.col-md-offset-3.text-center
             .box-message-inner
               textarea(v-model='message', @keydown.enter.prevent='send', v-on:input='at')
-              button(@click="send")= 'POST!' 
-              button(@click="force_send")= 'FORCE POST!' 
+              button(id='submit', @click="send")= 'POST' 
+              button(id='status', @click="changestatus", onclick="changestatus(this)", style="color:blue")='ON' 
 
   .container.box-chat
     .row
@@ -46,7 +44,7 @@ block script
   script(src='/javascripts/bootstrap.min.js')
   script(src='/javascripts/vue.min.js')
   script(src='/javascripts/socket.io-1.4.5.js')
-  script(src='/javascripts/jquery.avgrund.js')
+  script(src='/javascripts/jquery.avgrund.js') 
   if admin
     script(type='text/javascript').
       var admin= true;
@@ -55,6 +53,4 @@ block script
       var admin = false;
   script(src='/javascripts/chat2x.js')
   script(src='/javascripts/analytics.js')
-
-
-
+  script(src='/javascripts/status.js')

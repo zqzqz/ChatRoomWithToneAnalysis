@@ -9,7 +9,7 @@ $('body').bind("touchstart", function() {});
 
 // Todo: linking server timeout
 var urlRegex = /[A-Za-z0-9]*?\.?.+\.(com|net|cn|org|me)/;
-var wordRegex = /(pan|share|baidu|magnet|傻逼|你妈|妈逼|操你|啪|[0-9]{10,})/;
+var wordRegex = /(shit|fuck|bitch|傻逼|你妈|妈逼|操你|啪|[0-9]{10,})/;
 var atRegex = /@([a-z0-9]*?)\s/g;
 
 /**
@@ -106,9 +106,13 @@ socket.on('offline', function(off) {
 var message = new Vue({
     el: '.box-message-inner',
     data: {
-        message: ''
+        message: '',
+        status: false,
     },
     methods: {
+        changestatus: function() {
+            this.status = !this.status;
+        },
         send: function() {
 
             if (cooling) return;
@@ -119,17 +123,18 @@ var message = new Vue({
             var m = this.message.trim().slice(0, 140);
 
             if (blankMsgCheck(m) != 0) return;
-
+            /*
             if (urlRegex.test(m.toLowerCase()) || wordRegex.test(m.toLowerCase())) {
                 this.message = '';
                 alert('alert');
                 return;
-            }
+            }*/
             
             // fix trim()
             emitAtMessage(m+' ');
 
-            emitMessage(m, false);
+            emitMessage(m, this.status);
+            console.log(this.status);
 
             if (!admin) {
                 this.message = 'loading...';
@@ -150,47 +155,7 @@ var message = new Vue({
 
 
         },
-        force_send: function () {
 
-            if (cooling) return;
-
-            var $textarea = $('textarea');
-            //$textarea.focus();
-
-            var m = this.message.trim().slice(0, 140);
-
-            if (blankMsgCheck(m) != 0) return;
-
-            if (urlRegex.test(m.toLowerCase()) || wordRegex.test(m.toLowerCase())) {
-                this.message = '';
-                alert('alert');
-                return;
-            }
-
-            // fix trim()
-            emitAtMessage(m + ' ');
-
-            emitMessage(m, true);
-
-            if (!admin) {
-                this.message = 'loading...';
-                $textarea.attr('disabled', true);
-                cooling = true;
-                setTimeout(function () {
-                    message.message = '';
-                    $textarea.attr('disabled', false);
-                    cooling = false;
-                }, 1000);
-            }
-            else {
-                this.message = '';
-            }
-
-            // when there is no cooling
-            //this.message = ''
-
-
-        },
         at: function() {
             // null -> true -> false
             chat.atActive = !!this.message.match(/@$/);
