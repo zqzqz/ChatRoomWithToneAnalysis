@@ -7,7 +7,7 @@ var app = require('../app');
 var _ = require('underscore');
 var socket = require('socket.io');
 var session = require('./backend');
-var Message = require('./models');
+//var Message = require('./models');
 var cookie = require('cookie');
 var logger = require('./logger');
 var util = require('./util');
@@ -156,6 +156,7 @@ function Socket(srv) {
                 tone.analysis(msg).then(function (data) {
                     //console.log(data);
                     // save msg to db
+                    /*
                     var history = new Message({
                         sid: sid,
                         cid: cid,
@@ -165,6 +166,7 @@ function Socket(srv) {
                         timestamp: Date.now()
                     });
                     history.save();
+                    */
                     const anger = 0;
                     const disgust = 1;
                     const fear = 2;
